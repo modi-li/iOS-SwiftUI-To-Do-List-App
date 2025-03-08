@@ -20,11 +20,11 @@ struct EditItemView: View {
         NavigationStack {
             Form {
                 Section {
-                    TextField("Title", text: $item.title)
+                    TextField("Name", text: $item.name)
                 }
                 Section {
                     List(itemLists) { itemList in
-                        SelectionRowView(title: itemList.title, isSelected: item.itemLists.contains(itemList)) {
+                        SelectionRowView(name: itemList.name, isSelected: item.itemLists.contains(itemList)) {
                             if item.itemLists.contains(itemList) {
                                 item.itemLists.removeAll(where: { $0 == itemList })
                             } else {
@@ -42,15 +42,11 @@ struct EditItemView: View {
                         dismiss()
                     } label: {
                         Text("Save")
+                            .fontWeight(.medium)
                     }
                 }
             }
         }
     }
     
-}
-
-#Preview {
-    @State var item = Item()
-    return EditItemView(item: $item)
 }

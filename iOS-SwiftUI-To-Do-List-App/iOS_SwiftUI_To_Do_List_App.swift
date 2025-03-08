@@ -27,6 +27,7 @@ struct iOS_SwiftUI_To_Do_List_App: App {
     var body: some Scene {
         WindowGroup {
             MainView()
+                .tint(.indigo)
         }
         .modelContainer(sharedModelContainer)
     }

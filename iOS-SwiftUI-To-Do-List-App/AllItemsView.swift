@@ -41,7 +41,8 @@ struct AllItemsView: View {
                     Button {
                         addItemSheetIsPresented.toggle()
                     } label: {
-                        Text("Add Item")
+                        Text("Add")
+                            .fontWeight(.medium)
                     }
                 }
             }
@@ -54,12 +55,14 @@ struct AllItemsView: View {
             .overlay {
                 if items.isEmpty {
                     ContentUnavailableView {
-                        Label("No Items", systemImage: "list.bullet.rectangle.portrait")
-                    } description: {
-                        Text("Start by adding an item.")
+                        Label("No Items", systemImage: "checkmark.square")
                     } actions: {
-                        Button("Add Item") {
+                        Button {
                             addItemSheetIsPresented = true
+                        } label: {
+                            Text("Add Item")
+                                .font(.system(size: 16, weight: .medium))
+                                .padding(.top, 12)
                         }
                     }
                     .offset(y: -50)

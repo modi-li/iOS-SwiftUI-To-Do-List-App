@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Bool: Comparable {
+extension Bool: @retroactive Comparable {
     
     public static func < (lhs: Bool, rhs: Bool) -> Bool {
         !lhs && rhs

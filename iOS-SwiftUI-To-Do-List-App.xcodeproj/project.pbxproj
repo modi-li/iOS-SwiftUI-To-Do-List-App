@@ -22,6 +22,7 @@
 		D56254362C519362006C0538 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56254352C519362006C0538 /* Extensions.swift */; };
 		D56254682C52C97C006C0538 /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56254672C52C97C006C0538 /* ItemRowView.swift */; };
 		D562546A2C52DA71006C0538 /* EditItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56254692C52DA71006C0538 /* EditItemListView.swift */; };
+		D5F6BD5B2D7BB2C8004D9EFD /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F6BD5A2D7BB2C6004D9EFD /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		D56254352C519362006C0538 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D56254672C52C97C006C0538 /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
 		D56254692C52DA71006C0538 /* EditItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemListView.swift; sourceTree = "<group>"; };
+		D5F6BD5A2D7BB2C6004D9EFD /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +75,6 @@
 		D541B9912C4A06FB00FDAC15 /* iOS-SwiftUI-To-Do-List-App */ = {
 			isa = PBXGroup;
 			children = (
-				D541B9922C4A06FB00FDAC15 /* iOS_SwiftUI_To_Do_List_App.swift */,
 				D541B9962C4A06FB00FDAC15 /* Models.swift */,
 				D541B9942C4A06FB00FDAC15 /* MainView.swift */,
 				D541B9A22C4A081500FDAC15 /* AllItemsView.swift */,
@@ -86,6 +87,8 @@
 				D56254692C52DA71006C0538 /* EditItemListView.swift */,
 				D541B9B62C4F056D00FDAC15 /* SelectionRowView.swift */,
 				D56254352C519362006C0538 /* Extensions.swift */,
+				D5F6BD5A2D7BB2C6004D9EFD /* Helpers.swift */,
+				D541B9922C4A06FB00FDAC15 /* iOS_SwiftUI_To_Do_List_App.swift */,
 				D541B9982C4A06FC00FDAC15 /* Assets.xcassets */,
 				D541B99A2C4A06FC00FDAC15 /* Preview Content */,
 			);
@@ -171,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D541B9B12C4DE12600FDAC15 /* AddItemView.swift in Sources */,
+				D5F6BD5B2D7BB2C8004D9EFD /* Helpers.swift in Sources */,
 				D541B9A32C4A081500FDAC15 /* AllItemsView.swift in Sources */,
 				D56254682C52C97C006C0538 /* ItemRowView.swift in Sources */,
 				D541B9952C4A06FB00FDAC15 /* MainView.swift in Sources */,

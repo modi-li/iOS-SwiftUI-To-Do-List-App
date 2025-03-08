@@ -23,7 +23,13 @@ struct AllItemListsView: View {
                     NavigationLink {
                         ItemListView(itemList: itemList)
                     } label: {
-                        Text(itemList.title)
+                        HStack {
+                            Text(itemList.name)
+                                .font(.system(size: 18))
+                            Spacer()
+                            Text("\(itemList.items.count)")
+                                .foregroundStyle(Color.secondary)
+                        }
                     }
                 }
                 .onDelete(perform: deleteItemLists)
@@ -35,19 +41,22 @@ struct AllItemListsView: View {
                     Button {
                         sheetIsPresented.toggle()
                     } label: {
-                        Text("Add List")
+                        Text("Add")
+                            .fontWeight(.medium)
                     }
                 }
             }
             .overlay {
                 if itemLists.isEmpty {
                     ContentUnavailableView {
-                        Label("No Lists", systemImage: "list.bullet.below.rectangle")
-                    } description: {
-                        Text("Start by adding a list.")
+                        Label("No Lists", systemImage: "rectangle.stack")
                     } actions: {
-                        Button("Add List") {
+                        Button {
                             sheetIsPresented = true
+                        } label: {
+                            Text("Add List")
+                                .font(.system(size: 16, weight: .medium))
+                                .padding(.top, 12)
                         }
                     }
                     .offset(y: -50)

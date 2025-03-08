@@ -17,7 +17,7 @@ struct EditItemListView: View {
         NavigationStack {
             Form {
                 Section {
-                    TextField("Title", text: $itemList.title)
+                    TextField("Name", text: $itemList.name)
                 }
             }
             .navigationTitle("Edit List")
@@ -28,6 +28,7 @@ struct EditItemListView: View {
                         dismiss()
                     } label: {
                         Text("Save")
+                            .fontWeight(.medium)
                     }
                 }
             }

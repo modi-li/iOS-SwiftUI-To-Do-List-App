@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SelectionRowView: View {
     
-    var title: String
+    var name: String
     
     var isSelected: Bool
     
@@ -17,7 +17,7 @@ struct SelectionRowView: View {
     
     var body: some View {
         HStack {
-            Text(title)
+            Text(name)
             Spacer()
             if isSelected {
                 Image(systemName: "checkmark")

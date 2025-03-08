@@ -18,6 +18,8 @@ struct MainView: View {
     
     @State private var visibility: NavigationSplitViewVisibility = .doubleColumn
     
+    @State private var allItemListsExpanded = true
+    
     @State private var addItemListSheetIsPresented = false
     
     var body: some View {
@@ -25,11 +27,11 @@ struct MainView: View {
             TabView {
                 AllItemsView()
                     .tabItem {
-                        Label("All Items", systemImage: "list.bullet.rectangle.portrait")
+                        Label("Items", systemImage: "checkmark.square")
                     }
                 AllItemListsView()
                     .tabItem {
-                        Label("All Lists", systemImage: "list.bullet.below.rectangle")
+                        Label("Lists", systemImage: "rectangle.stack")
                     }
             }
         } else {
@@ -38,14 +40,23 @@ struct MainView: View {
                     NavigationLink {
                         AllItemsView()
                     } label: {
-                        Label("All Items", systemImage: "list.bullet.rectangle.portrait")
+                        Label {
+                            Text("All Items")
+                                .font(.system(size: 20, weight: .medium))
+                        } icon: {
+                            Image(systemName: "checkmark.square")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 22)
+                                .fontWeight(.medium)
+                        }
                     }
-                    DisclosureGroup {
+                    DisclosureGroup(isExpanded: $allItemListsExpanded) {
                         ForEach(itemLists) { itemList in
                             NavigationLink {
                                 ItemListView(itemList: itemList)
                             } label: {
-                                Label(itemList.title, systemImage: "list.bullet.below.rectangle")
+                                Text(itemList.name)
                             }
                         }
                         .onDelete(perform: deleteItemLists)
@@ -53,7 +64,16 @@ struct MainView: View {
                         NavigationLink {
                             AllItemListsView()
                         } label: {
-                            Text("All Lists (\(itemLists.count))")
+                            Label {
+                                Text("All Lists (\(itemLists.count))")
+                                    .font(.system(size: 20, weight: .medium))
+                            } icon: {
+                                Image(systemName: "rectangle.stack")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 26)
+                                    .fontWeight(.medium)
+                            }
                         }
                     }
                 }
@@ -65,6 +85,7 @@ struct MainView: View {
                         addItemListSheetIsPresented.toggle()
                     } label: {
                         Text("Add List")
+                            .fontWeight(.medium)
                     }
                 }
                 .padding(.top, 10)
